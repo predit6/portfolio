@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compétences – Ange Tangang</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f0f0;
+      color: #222;
+    }
+
+    /* ── NAV (même style que le portfolio) ── */
+    nav {
+      background: #1a1a1a;
+      padding: 16px 0;
+      text-align: center;
+    }
+    nav .brand {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color .2s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active { color: #fff; }
+
+    /* ── SECTION COMPÉTENCES ── */
+    .competences {
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 0 24px;
+    }
+
+    .competences h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      color: #1a1a1a;
+    }
+
+    /* Grille des catégories */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    /* Carte */
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px 22px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h3 .icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #20c997;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* Barre de compétence */
+    .skill-item {
+      margin-bottom: 14px;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    .skill-label span:last-child {
+      color: #20c997;
+      font-weight: 600;
+    }
+
+    .bar-bg {
+      background: #e9e9e9;
+      border-radius: 99px;
+      height: 7px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: #20c997;
+      width: 0;
+      transition: width 1s ease;
+    }
+
+    /* Tags (pour outils) */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      background: #f0f0f0;
+      border-radius: 5px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      color: #444;
+      border: 1px solid #ddd;
+      transition: border-color .2s, color .2s;
+    }
+
+    .tag:hover {
+      border-color: #20c997;
+      color: #20c997;
+    }
+
+    /* Langues */
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .lang-flag {
+      font-size: 1.4rem;
+      width: 30px;
+      text-align: center;
+    }
+
+    .lang-info { flex: 1; }
+
+    .lang-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .lang-level {
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #e9e9e9;
+    }
+
+    .dot.filled { background: #20c997; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation identique au portfolio -->
+  <nav>
+    <div class="brand">Bienvenue sur mon Portfolio</div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="competences.html" class="active">Compétences</a></li>
+      <li><a href="meteo.html">Projet Météo</a></li>
+      <li><a href="bdd.html">Projet BDD</a></li>
+      <li><a href="https://www.figma.com/design/mihH9or1BgjeclmIai39JC/projet-1?node-id=0-1&t=C1ToBscjmbsRy5Ho-1" 
+       target="_blank">Projet Figma</a></li>
+      <li><a href="index.html">À propos</a></li>
+      <li><a href="index.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section compétences -->
+  <section class="competences">
+    <h2>Compétences</h2>
+
+    <div class="grid">
+
+      <!-- Programmation -->
+      <div class="card">
+        <h3><span class="icon">💻</span> Programmation</h3>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>Python</span><span>85%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>SQL / SQLite</span><span>75%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>HTML / CSS</span><span>70%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>JavaScript</span><span>50%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="50"></div></div>
+        </div>
+      </div>
+
+      <!-- Data & Analyse -->
+      <div class="card">
+        <h3><span class="icon">📊</span> Data & Analyse</h3>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>Pandas</span><span>80%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Matplotlib</span><span>75%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Seaborn</span><span>70%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Modélisation MCD/MLD</span><span>65%</span></div>
+          <div class="bar-bg"><div class="bar-fill" data-width="65"></div></div>
+        </div>
+      </div>
+
+      <!-- Outils -->
+      <div class="card">
+        <h3><span class="icon">🛠</span> Outils & Environnement</h3>
+        <div class="tags">
+          <span class="tag">Figma</span>
+          <span class="tag">Git / GitHub</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Windows</span>
+          <span class="tag">draw.io</span>
+          <span class="tag">Notion</span>
+        </div>
+      </div>
+
+      <!-- Langues -->
+      <div class="card">
+        <h3><span class="icon">🌍</span> Langues</h3>
+
+        <div class="lang-item">
+          <div class="lang-flag">🇫🇷</div>
+          <div class="lang-info">
+            <div class="lang-name">Français</div>
+            <div class="lang-level">Langue maternelle</div>
+          </div>
+          <div class="dots">
+            <div class="dot filled"></div>
+            <div class="dot filled"></div>
+            <div class="dot filled"></div>
+            <div class="dot filled"></div>
+            <div class="dot filled"></div>
+          </div>
+        </div>
+
+        <div class="lang-item">
+          <div class="lang-flag">🇬🇧</div>
+          <div class="lang-info">
+            <div class="lang-name">Anglais</div>
+            <div class="lang-level">Intermédiaire (B1)</div>
+          </div>
+          <div class="dots">
+            <div class="dot filled"></div>
+            <div class="dot filled"></div>
+            <div class="dot filled"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Animation des barres au chargement
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+    });
+  </script>
+<footer>
+    <p>&copy; 2026 Ange - Portfolio</p>
+  </footer>
+</body>
+</html>
